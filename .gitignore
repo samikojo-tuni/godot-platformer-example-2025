@@ -12,7 +12,6 @@ mono_crash.*
 
 # Godot 4 specific
 .godot/
-*.godot
 
 # OS generated files
 .DS_Store
