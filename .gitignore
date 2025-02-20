@@ -1,0 +1,26 @@
+# Godot-specific files
+.import/
+export.cfg
+export_presets.cfg
+
+# Mono-specific files
+.mono/
+data_*/
+mono_crash.*
+*.pdb
+*.mdb
+
+# Godot 4 specific
+.godot/
+*.godot
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# User-specific files
+user://*
+Builds/
+
+# VS Code specific files
+.vscode/
