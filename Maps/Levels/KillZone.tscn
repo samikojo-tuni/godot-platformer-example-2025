@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgxgsplj0d3xs"]
+
+[ext_resource type="Script" path="res://Code/Level/KillZone.cs" id="1_0mj2v"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e7wdm"]
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(140, 386)
+collision_layer = 8
+script = ExtResource("1_0mj2v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_e7wdm")

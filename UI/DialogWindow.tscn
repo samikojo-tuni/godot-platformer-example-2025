@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6p1bislv3j1v"]
+
+[ext_resource type="Script" path="res://Code/UI/DialogWindow.cs" id="1_cot6w"]
+
+[node name="DialogWindow" type="Panel" node_paths=PackedStringArray("_headlineLabel", "_textLabel", "_okButton", "_cancelButton")]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cot6w")
+_headlineLabel = NodePath("Control/Headline")
+_textLabel = NodePath("Control/Label")
+_okButton = NodePath("Control/HBoxContainer/OKButton")
+_cancelButton = NodePath("Control/HBoxContainer/CancelButton")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_right = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Headline" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 17.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 12
+text = "Headline"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 17.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+text = "Testiteksti"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 74.0
+offset_bottom = 105.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="OKButton" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "OK"
+
+[node name="CancelButton" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "Cancel"

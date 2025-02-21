@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://bnmpnyhjje40x"]
+
+[ext_resource type="Script" path="res://Code/UI/LevelUIControl.cs" id="1_uppr2"]
+[ext_resource type="Texture2D" uid="uid://c16ucd6wbmpvg" path="res://Art/UI/play-pause.png" id="2_mtbn3"]
+[ext_resource type="PackedScene" uid="uid://b6p1bislv3j1v" path="res://UI/DialogWindow.tscn" id="3_nnfkb"]
+[ext_resource type="Script" path="res://Code/UI/PauseDialog.cs" id="4_owmlb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgrce"]
+atlas = ExtResource("2_mtbn3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svvjx"]
+atlas = ExtResource("2_mtbn3")
+region = Rect2(16, 0, 16, 16)
+
+[node name="LevelUI" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="." node_paths=PackedStringArray("_scoreLabel", "_pauseDialog", "_pauseButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uppr2")
+_scoreLabel = NodePath("ScoreLabel")
+_pauseDialog = NodePath("DialogWindow")
+_pauseButton = NodePath("TextureButton")
+
+[node name="ScoreLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -16.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Score: xxxxxxx"
+
+[node name="TextureButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+texture_normal = SubResource("AtlasTexture_bgrce")
+texture_pressed = SubResource("AtlasTexture_svvjx")
+
+[node name="DialogWindow" parent="Control" instance=ExtResource("3_nnfkb")]
+layout_mode = 1
+offset_top = -69.0
+offset_bottom = 36.0
+script = ExtResource("4_owmlb")
+_defaultHeadline = "Pause"
+_defaultText = "Game is paused!"
+_openOnStart = false
+
+[node name="CancelButton" parent="Control/DialogWindow/Control/HBoxContainer" index="1"]
+visible = false
+
+[editable path="Control/DialogWindow"]

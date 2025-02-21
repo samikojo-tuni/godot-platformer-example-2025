@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bufp5cu3rjth4"]
+
+[ext_resource type="Script" path="res://Code/Level/Banana.cs" id="1_833pt"]
+[ext_resource type="Texture2D" uid="uid://bi23r5csv53p4" path="res://Art/Collectables/Bananas.png" id="2_50o1v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2yseq"]
+
+[node name="Banana" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_833pt")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_50o1v")
+hframes = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2yseq")

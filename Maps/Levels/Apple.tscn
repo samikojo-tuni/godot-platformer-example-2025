@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ihxh1yj4xemc"]
+
+[ext_resource type="Script" path="res://Code/Level/Apple.cs" id="1_2xveg"]
+[ext_resource type="Texture2D" uid="uid://bu2soa0k632p8" path="res://Art/Collectables/Apple.png" id="1_26mri"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2yseq"]
+
+[node name="Apple" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_2xveg")
+_score = 100
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_26mri")
+hframes = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2yseq")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwp7khepwyeiw"]
+
+[ext_resource type="Texture2D" uid="uid://dc2q5m0sptxv8" path="res://Art/Character/Idle (32x32).png" id="1_e6x4h"]
+[ext_resource type="Script" path="res://Code/Level/MainCharacter.cs" id="1_wv4gc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sec4h"]
+radius = 12.0416
+
+[node name="MainCharacter" type="CharacterBody2D"]
+collision_mask = 15
+script = ExtResource("1_wv4gc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("1_e6x4h")
+hframes = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("CircleShape2D_sec4h")
